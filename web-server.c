@@ -13,6 +13,7 @@ int main()
     struct sockaddr_in addr = {
         AF_INET,  // ipv4
         0x901f,   // Port in hexadecimak
+        // hexadecimal of 8080 is 1F90 but its written like this swapping first two with last two
         0         // default
     };
     
