@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: hifqb-uhabu
+created: 2025-03-08T22:53:22+05:30
