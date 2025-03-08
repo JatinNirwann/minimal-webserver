@@ -95,16 +95,6 @@
       font-size: 14px;
     }
     
-    .success-message {
-      background-color: #d4edda;
-      color: #155724;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      text-align: center;
-      font-weight: bold;
-    }
-    
     @media (max-width: 600px) {
       .gallery {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -113,36 +103,32 @@
   </style>
 </head>
 <body>
-  <div class="success-message">
-    🎉 Congrats! Your web server is up and running! Prepare for an overdose of feline cuteness! 🐱
-  </div>
-  
   <header>
     <h1>Purr-fect Gallery</h1>
-    <p>A collection of internet's most meme-worthy cats</p>
+    <p>A collection of adorable cat photos</p>
   </header>
   
   <div class="controls">
-    <button id="load-cats">Summon More Cats</button>
-    <button id="shuffle">Confuse The Cats</button>
+    <button id="load-cats">Load More Cats</button>
+    <button id="shuffle">Shuffle Gallery</button>
   </div>
   
   <div class="gallery" id="cat-gallery"></div>
   
   <script>
     const catData = [
-      { id: 1, name: "Whiskers", description: "Chef cat who thinks your cooking is a catastrophe.", imageUrl: "/images/Whiskers.jpeg" },
-      { id: 2, name: "Luna", description: "Judging you silently with those wide eyes of disappointment.", imageUrl: "/images/Luna.jpeg" },
-      { id: 3, name: "Oliver", description: "Has seen things on the internet that cannot be unseen.", imageUrl: "/images/Oliver.jpeg" },
-      { id: 4, name: "Bella", description: "Plotting world domination one nap at a time.", imageUrl: "/images/Bella.jpeg" },
-      { id: 5, name: "Max", description: "Existential crisis cat questioning all nine of his lives.", imageUrl: "/images/Max.jpeg" },
-      { id: 6, name: "Cleo", description: "Will steal your socks and blame the dog.", imageUrl: "/images/Cleo.jpeg" }
+      { id: 1, name: "Whiskers", description: "A playful tabby who loves to chase toys.", imageUrl: "/images/Whiskers.jpeg" },
+      { id: 2, name: "Luna", description: "A sleepy black cat who enjoys window watching.", imageUrl: "/images/Luna.jpeg" },
+      { id: 3, name: "Oliver", description: "An orange tabby with a big personality.", imageUrl: "/images/Oliver.jpeg" },
+      { id: 4, name: "Bella", description: "A gentle calico who purrs constantly.", imageUrl: "/images/Bella.jpeg" },
+      { id: 5, name: "Max", description: "A curious tuxedo cat who investigates everything.", imageUrl: "/images/Max.jpeg" },
+      { id: 6, name: "Cleo", description: "A regal Siamese with bright blue eyes.", imageUrl: "/images/Cleo.jpeg" }
     ];
 
     const moreCats = [
-      { id: 7, name: "Milo", description: "Innocent face, but we all know who knocked over that vase.", imageUrl: "/images/Milo.jpeg" },
-      { id: 8, name: "Sophie", description: "Looks cute but is secretly planning your demise.", imageUrl: "/images/Sophie.jpeg" },
-      { id: 9, name: "Charlie", description: "Has seen the ghost of your browser history.", imageUrl: "/images/Charlie.jpeg" }
+      { id: 7, name: "Milo", description: "A striped tabby who loves to climb.", imageUrl: "/images/Milo.jpeg" },
+      { id: 8, name: "Sophie", description: "A fluffy Persian who enjoys grooming.", imageUrl: "/images/Sophie.jpeg" },
+      { id: 9, name: "Charlie", description: "An energetic Bengal with spotted fur.", imageUrl: "/images/Charlie.jpeg" }
     ];
 
     function createCatCard(cat) {
@@ -177,22 +163,16 @@
       displayCats(catData);
       
       document.getElementById('load-cats').addEventListener('click', function() {
-        this.textContent = 'Summoning...';
+        this.textContent = 'Loading...';
         this.disabled = true;
         
         setTimeout(() => {
           displayCats(moreCats);
-          this.textContent = 'The Cat Army is Complete!';
+          this.textContent = 'All Cats Loaded!';
         }, 1000);
       });
       
-      document.getElementById('shuffle').addEventListener('click', function() {
-        this.textContent = 'Cats are confused!';
-        shuffleGallery();
-        setTimeout(() => {
-          this.textContent = 'Confuse The Cats';
-        }, 1000);
-      });
+      document.getElementById('shuffle').addEventListener('click', shuffleGallery);
     });
   </script>
 </body>
