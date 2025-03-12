@@ -15,13 +15,13 @@ int main()
     struct sockaddr_in addr;
     memset(&addr, 0, sizeof(addr));
     addr.sin_family = AF_INET;
-    addr.sin_port = htons(9090);
+    addr.sin_port = htons(8080);
     addr.sin_addr.s_addr = INADDR_ANY;
     
     bind(socket_info, (struct sockaddr*)&addr, sizeof(addr));
     listen(socket_info, 10);
     
-    printf("Server running on port 9090...\n");
+    printf("Server running on port 8080...\n");
     
     while(1)
     {   

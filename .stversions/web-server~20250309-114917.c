@@ -21,7 +21,7 @@ int main()
     bind(socket_info, (struct sockaddr*)&addr, sizeof(addr));
     listen(socket_info, 10);
     
-    printf("Server running on port 9090...\n");
+    printf("Server running on port 8080...\n");
     
     while(1)
     {   
